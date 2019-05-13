@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
+
 namespace Advence.Lesson_6
 {
     public partial class Practice
@@ -103,8 +104,17 @@ namespace Advence.Lesson_6
                 Duration = 247,
                 Lyrics = "Lyrics 1"
             };
-           
-        }
+			var xmlSerializer = new XmlSerializer(typeof(Song));
+			
+			StringWriter xmlToString = new StringWriter();
+			xmlSerializer.Serialize(xmlToString, song);
+			Console.WriteLine(xmlToString.ToString());
+			Console.WriteLine();
+			StringReader strinToXml = new StringReader(xmlToString.ToString());
+			var song2 = (Song)xmlSerializer.Deserialize(strinToXml);
+			Console.WriteLine(song2 );
+
+		}
 
         /// <summary>
         /// AL6-P7/7-FileSrlz.
@@ -112,8 +122,25 @@ namespace Advence.Lesson_6
         /// </summary>
         public static void AL6_P7_7_FileSrlz()
         {
+	        Song song = new Song()
+	        {
+		        Title = "Title 1",
+		        Duration = 247,
+		        Lyrics = "Lyrics 1"
+	        };
+	        XmlSerializer xmlSer = new XmlSerializer(typeof(Song));
 
-        }
+	        using (FileStream fs = new FileStream("Songs.txt", FileMode.OpenOrCreate))
+	        {
+		        xmlSer.Serialize(fs, song);
+		        Console.WriteLine(song.ToString());
+		        }
+	        using (FileStream fs = new FileStream("Songs.txt", FileMode.Open))
+	        {
+		        Song newSong = (Song)xmlSer.Deserialize(fs);
+		        Console.WriteLine($"{newSong.Title} {newSong.Duration} {newSong.Lyrics}");
+	        }
+		}
 
     }
 }

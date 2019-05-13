@@ -9,28 +9,30 @@ using System.Xml;
 
 namespace Advence.Lesson_6
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            //SysteIOUsageExample();
-            //WriteToFileWithStream();
-            //Practice1();
-            //ReadFromFileWithStream();
-            //WriteToFileWithStream();
-            //Practice2();
-            //BufferedStreamExample();
-            //SericalizationExample();
-            //XMLDocumentExample();
-            //Lesson.XMLReaderExample();
-            //Practice3_Task1_XMLSerizlization();
-            //Practice.AL6_P1_7_DirInfo();
-            //Practice.AL6_P2_7_FileInfo();
-            //Practice.AL6_P3_7_CreateDir();
-            //Practice.AL6_P4_7_CopyFile();
-            //Practice.AL6_P5_7_FileChat();
-            Lesson.SericalizationExample();
-            Console.ReadLine();
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			//SysteIOUsageExample();
+			//WriteToFileWithStream();
+			//Practice1();
+			//ReadFromFileWithStream();
+			//WriteToFileWithStream();
+			//Practice2();
+			//BufferedStreamExample();
+			//SericalizationExample();
+			//XMLDocumentExample();
+			//Lesson.XMLReaderExample();
+			//Practice3_Task1_XMLSerizlization();
+			//Practice.AL6_P1_7_DirInfo();
+			//Practice.AL6_P2_7_FileInfo();
+			//Practice.AL6_P3_7_CreateDir();
+			//Practice.AL6_P4_7_CopyFile();
+			//Practice.AL6_P5_7_FileChat();
+			//Lesson.SericalizationExample();
+			//Practice.AL6_P6_7_ConsoleSrlzn();
+			Practice.AL6_P7_7_FileSrlz();
+			Console.ReadLine();
         }         
     }
 }
